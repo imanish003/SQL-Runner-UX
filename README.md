@@ -1,5 +1,7 @@
 # SQL Query Runner - Frontend Engineering Challenge
 
+[🌐 **Live Demo:** sql-runner-ux.imanish.com](https://sql-runner-ux.imanish.com)
+
 A web-based application capable of running SQL queries and displaying results, built for Frontend Engineering challenge.
 
 ## 📋 Challenge Overview
@@ -78,10 +80,6 @@ Run the test suite:
 ```bash
 npm run test
 ```
-
-## 🚀 Deployment
-
-TODO: This application is deployed on [Vercel - link to be added].
 
 ## 🎨 Design Philosophy
 
