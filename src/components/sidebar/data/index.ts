@@ -1,0 +1,1 @@
+export { defaultQueries } from "./defaultQueries";
