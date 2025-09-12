@@ -22,6 +22,37 @@ This application is designed to simulate a SQL query runner interface that a dat
 - **Resizable Panels**: [react-resizable-panels](https://github.com/bvaughn/react-resizable-panels) to allow users to adjust the size of the query editor and results pane.
 - **Dialog & Primitives**: [@radix-ui/react-dialog](https://www.radix-ui.com/primitives/docs/components/dialog), [@radix-ui/react-separator](https://www.radix-ui.com/primitives/docs/components/separator), [@radix-ui/react-slot](https://www.radix-ui.com/primitives/docs/components/slot). These are added by components from shadcn/ui, and can be used directly if needed.
 
+## 🎥 Demo
+
+[Walkthrough video will be added here - showcasing implementation details and query execution]
+
+## 📁 Project Structure
+
+```
+public/
+  ├── data/                # Static JSON datasets
+  └── ...                  # Static assets (SVGs, images, etc.)
+src/
+  ├── app/                 # Next.js app router (pages, layouts)
+  ├── components/
+  │   ├── ui/              # Base UI components (shadcn/ui)
+  │   ├── query-editor/    # Query editor feature (components, hooks)
+  │   ├── query-runner/    # Query runner feature (components, hooks)
+  │   ├── results-panel/   # Results panel feature (components, hooks)
+  │   └── sidebar/         # Sidebar feature (components, data)
+  ├── utils/               # Shared utility functions
+  └── types.ts             # Global TypeScript types
+```
+
+## 🎨 Design Philosophy
+
+The application is built on these core principles:
+
+- **User-Centric Workflows**: Designed for real-world data analyst tasks—fast query input, instant results, and seamless switching between queries.
+- **Performance at Scale**: Efficient virtualization and static JSON datasets allow the app to handle thousands of rows smoothly, ensuring responsive interactions even on modest hardware.
+- **Accessibility by Design**: Every UI component is crafted for keyboard navigation, screen reader compatibility, and high-contrast viewing, following WCAG 2.2 AA standards and accessibility best practices.
+- **Future-Proof Scalability**: The modular, feature-based folder structure supports easy extension, maintenance, and the addition of new datasets or features as analyst workflows evolve.
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -51,28 +82,6 @@ npm run dev
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## 🎥 Demo
-
-[Walkthrough video will be added here - showcasing implementation details and query execution]
-
-## 📁 Project Structure
-
-```
-public/
-  ├── data/                # Static JSON datasets
-  └── ...                  # Static assets (SVGs, images, etc.)
-src/
-  ├── app/                 # Next.js app router (pages, layouts)
-  ├── components/
-  │   ├── ui/              # Base UI components (shadcn/ui)
-  │   ├── query-editor/    # Query editor feature (components, hooks)
-  │   ├── query-runner/    # Query runner feature (components, hooks)
-  │   ├── results-panel/   # Results panel feature (components, hooks)
-  │   └── sidebar/         # Sidebar feature (components, data)
-  ├── utils/               # Shared utility functions
-  └── types.ts             # Global TypeScript types
-```
-
 ## 🧪 Testing
 
 Run the test suite:
@@ -80,12 +89,3 @@ Run the test suite:
 ```bash
 npm run test
 ```
-
-## 🎨 Design Philosophy
-
-The application is built on these core principles:
-
-- **User-Centric Workflows**: Designed for real-world data analyst tasks—fast query input, instant results, and seamless switching between queries.
-- **Performance at Scale**: Efficient virtualization and static JSON datasets allow the app to handle thousands of rows smoothly, ensuring responsive interactions even on modest hardware.
-- **Accessibility by Design**: Every UI component is crafted for keyboard navigation, screen reader compatibility, and high-contrast viewing, following WCAG 2.2 AA standards and accessibility best practices.
-- **Future-Proof Scalability**: The modular, feature-based folder structure supports easy extension, maintenance, and the addition of new datasets or features as analyst workflows evolve.
