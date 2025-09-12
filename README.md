@@ -1,6 +1,5 @@
 # SQL Query Runner - Frontend Engineering Challenge
 
-
 [🌐 **Live Demo:** sql-runner-ux.imanish.com](https://sql-runner-ux.imanish.com)
 
 **SCREENSHOT:**
@@ -57,6 +56,25 @@ The application is built on these core principles:
 - **Performance at Scale**: Efficient virtualization and static JSON datasets allow the app to handle thousands of rows smoothly, ensuring responsive interactions even on modest hardware.
 - **Accessibility by Design**: Every UI component is crafted for keyboard navigation, screen reader compatibility, and high-contrast viewing, following WCAG 2.2 AA standards and accessibility best practices.
 - **Future-Proof Scalability**: The modular, feature-based folder structure supports easy extension, maintenance, and the addition of new datasets or features as analyst workflows evolve.
+
+## Performance Metrics
+
+I have used both Performance Tab of Chrome DevTools and Lighthouse to measure the performance of the application. You can see below the results from both tools.
+
+### Performance Tab of Chrome DevTools
+
+I have used Performance Tab of Chrome DevTools to measure the performance of the application. Here are some key metrics:
+
+- Time to First Byte (TTFB): ~50ms
+- First Contentful Paint (FCP): ~250ms
+- Largest Contentful Paint (LCP): ~380 ms
+- Cumulative Layout Shift (CLS): ~0.00
+
+### Lighthouse Performance Score
+
+Here is screenshot of the Lighthouse performance score. It shows both Performance and Accessibility scores are 100.
+
+![Lighthouse Performance Score](docs/LIGHTHOUSE_RESULT.png)
 
 ## 🚀 Getting Started
 
