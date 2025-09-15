@@ -4,7 +4,7 @@
 
 **SCREENSHOT:**
 
-![App Screenshot](docs/SCREENSHOT.png)
+![App Screenshot](docs/images/SCREENSHOT.png)
 
 A web-based application capable of running SQL queries and displaying results, built for Frontend Engineering challenge.
 
@@ -53,30 +53,13 @@ src/
 The application is built on these core principles:
 
 - **User-Centric Workflows**: Designed for real-world data analyst tasks—fast query input, instant results, and seamless switching between queries.
-- **Performance at Scale**: Efficient virtualization and static JSON datasets allow the app to handle thousands of rows smoothly, ensuring responsive interactions even on modest hardware.
+- **Performance**: Prioritizing speed with optimized rendering, virtualization for large datasets, and minimal load times.
 - **Accessibility by Design**: Every UI component is crafted for keyboard navigation, screen reader compatibility, and high-contrast viewing, following WCAG 2.2 AA standards and accessibility best practices.
-- **Future-Proof Scalability**: The modular, feature-based folder structure supports easy extension, maintenance, and the addition of new datasets or features as analyst workflows evolve.
-
-## Performance Metrics
-
-I have used both Performance Tab of Chrome DevTools and Lighthouse to measure the performance of the application. You can see below the results from both tools.
-
-### Performance Tab of Chrome DevTools
-
-I have used Performance Tab of Chrome DevTools to measure the performance of the application. Here are some key metrics:
-
-- Time to First Byte (TTFB): ~50ms
-- First Contentful Paint (FCP): ~250ms
-- Largest Contentful Paint (LCP): ~380 ms
-- Cumulative Layout Shift (CLS): ~0.00
-
-### Lighthouse Performance Score
-
-Here is screenshot of the Lighthouse performance score. It shows both Performance and Accessibility scores are 100.
-
-![Lighthouse Performance Score](docs/LIGHTHOUSE_RESULT.png)
+- **Future-Proof Scalability**: The modular, feature-based folder structure supports easy extension, maintenance, and the addition of new features.
 
 ## 🚀 Getting Started
+
+If you just wanna try out the app, visit the [Live Demo](https://sql-runner-ux.imanish.com). If you want to run it locally, follow the steps below.
 
 ### Prerequisites
 
@@ -87,21 +70,21 @@ Here is screenshot of the Lighthouse performance score. It shows both Performanc
 
 1. Clone the repository
 
-```bash
-git clone https://github.com/imanish003/SQL-Runner-UX
-```
+   ```bash
+   git clone https://github.com/imanish003/SQL-Runner-UX
+   ```
 
 2. Install dependencies
 
-```bash
-npm install
-```
+   ```bash
+   npm install
+   ```
 
 3. Run the development server
 
-```bash
-npm run dev
-```
+   ```bash
+   npm run dev
+   ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
