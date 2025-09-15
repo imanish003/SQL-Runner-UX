@@ -1,12 +1,19 @@
-import React from "react";
-import QueryEditor from "@/components/query-editor";
-import { ResultsPanel } from "@/components/results-panel";
+import React, { lazy, Suspense } from "react";
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
 import { IResultsData } from "@/types";
+import LoadingSpinner from "@/components/ui/loading-spinner";
+
+// Lazy load heavy components
+const QueryEditor = lazy(() => import("@/components/query-editor"));
+const ResultsPanel = lazy(() =>
+  import("@/components/results-panel").then((module) => ({
+    default: module.ResultsPanel,
+  }))
+);
 
 interface MainContentProps {
   queryText: string;
@@ -34,24 +41,30 @@ const MainContent: React.FC<MainContentProps> = ({
     <ResizablePanelGroup direction="vertical" className="flex-1">
       {/* Query Panel */}
       <ResizablePanel defaultSize={40} minSize={20} maxSize={90}>
-        <QueryEditor
-          value={queryText}
-          onChange={setQueryText}
-          onExecute={executeQuery}
-          onClear={onClearQuery}
-          isExecuting={isLoading}
-        />
+        <Suspense
+          fallback={<LoadingSpinner message="Loading query editor..." />}
+        >
+          <QueryEditor
+            value={queryText}
+            onChange={setQueryText}
+            onExecute={executeQuery}
+            onClear={onClearQuery}
+            isExecuting={isLoading}
+          />
+        </Suspense>
       </ResizablePanel>
 
       <ResizableHandle withHandle />
 
       {/* Results Panel */}
       <ResizablePanel defaultSize={60} minSize={10}>
-        <ResultsPanel
-          data={resultsData || undefined}
-          isLoading={isLoading}
-          error={error}
-        />
+        <Suspense fallback={<LoadingSpinner message="Loading results..." />}>
+          <ResultsPanel
+            data={resultsData || undefined}
+            isLoading={isLoading}
+            error={error}
+          />
+        </Suspense>
       </ResizablePanel>
     </ResizablePanelGroup>
   </div>

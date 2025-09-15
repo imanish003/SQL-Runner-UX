@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import { cn } from "@/utils/cn";
 import { IQuery } from "@/types";
 import SidebarContent from "./components/SidebarContent";
+import LoadingSpinner from "../ui/loading-spinner";
 
 interface DesktopSidebarProps {
   selectedQueryId: string;
@@ -28,12 +29,14 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({
         }
       )}
     >
-      <SidebarContent
-        selectedQueryId={selectedQueryId}
-        onQuerySelect={onQuerySelect}
-        isCompact={isSidebarCollapsed}
-        onToggleCollapse={handleToggleSidebar}
-      />
+      <Suspense fallback={<LoadingSpinner message="Loading sidebar..." />}>
+        <SidebarContent
+          selectedQueryId={selectedQueryId}
+          onQuerySelect={onQuerySelect}
+          isCompact={isSidebarCollapsed}
+          onToggleCollapse={handleToggleSidebar}
+        />
+      </Suspense>
     </div>
   );
 };
