@@ -12,6 +12,14 @@ A web-based application capable of running SQL queries and displaying results, b
 
 This application is designed to simulate a SQL query runner interface that a data analyst would use throughout their workday. While this is a dummy application that doesn't connect to a real database, it provides an intuitive interface for writing SQL queries and viewing tabular results.
 
+## ✍🏻 Documentation
+
+For detailed insights into the project's ideation, design decisions, and performance metrics, refer to the following documents:
+
+- [Ideation](/docs/1.%20Ideation.md) - Initial ideas and feature brainstorming
+- [Design](/docs/2.%20Design.md) - Detailed design specifications and architecture
+- [Performance](/docs/Performance.md) - Performance analysis and metrics
+
 ## 🛠 Technology Stack
 
 - **Framework**: [Next.js 15](https://nextjs.org)
