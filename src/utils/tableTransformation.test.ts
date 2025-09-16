@@ -19,9 +19,7 @@ describe("extractColumnNames", () => {
   });
 
   it("should extract column names from a single row", () => {
-    const rows: FlattenedData[] = [
-      { name: "John", age: "30", city: "NYC" },
-    ];
+    const rows: FlattenedData[] = [{ name: "John", age: "30", city: "NYC" }];
 
     const result = extractColumnNames(rows);
     expect(result).toEqual(["name", "age", "city"]);
@@ -34,7 +32,7 @@ describe("transformToTableData", () => {
   });
 
   it("should return empty results data for non-array input", () => {
-    const result = transformToTableData("not an array" as any);
+    const result = transformToTableData("not an array" as unknown as unknown[]);
     expect(result).toEqual({
       columns: [],
       rows: [],
