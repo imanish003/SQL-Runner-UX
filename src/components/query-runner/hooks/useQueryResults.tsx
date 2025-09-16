@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { IResultsData } from "@/types";
 import { fetchDataForQuery } from "@/utils/apiClient";
 import { transformToTableData } from "@/utils/tableTransformation";
@@ -48,15 +48,15 @@ export default function useQueryResults(selectedQueryId: string) {
     }
   }, [selectedQueryId]);
 
-  // Auto-load data when selectedQueryId changes
-  useEffect(() => {
-    executeQuery();
-  }, [executeQuery]);
-
-  const clearResults = () => {
+  const clearResults = useCallback(() => {
     setResultsData(null);
     setError(null);
-  };
+  }, []);
+
+  // Automatically clear results and error when query ID changes
+  useEffect(() => {
+    clearResults();
+  }, [selectedQueryId, clearResults]);
 
   return {
     isLoading,
