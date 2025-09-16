@@ -18,6 +18,8 @@ export default function QueryInput({
       placeholder={placeholder}
       value={value}
       onChange={(e) => onChange?.(e.target.value)}
+      required
+      aria-required
     />
   );
 }
