@@ -56,6 +56,11 @@ src/
   └── types.ts             # Global TypeScript types
 ```
 
+### Application Architecture Diagram
+
+<img width="844" height="437" alt="image" src="https://github.com/user-attachments/assets/250e5887-414c-4b6a-8a2b-f9ef2f8eebc3" />
+
+
 ## 🎨 Design Philosophy
 
 The application is built on these core principles:
