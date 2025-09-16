@@ -1,8 +1,11 @@
 "use client";
 
-import DesktopSidebar from "./Sidebar.Desktop";
-import MobileSidebar from "./Sidebar.Mobile";
+import { lazy } from "react";
 import { IQuery } from "@/types";
+
+// Lazy load platform-specific sidebar components
+const DesktopSidebar = lazy(() => import("./Sidebar.Desktop"));
+const MobileSidebar = lazy(() => import("./Sidebar.Mobile"));
 
 interface SidebarProps {
   selectedQueryId: string;

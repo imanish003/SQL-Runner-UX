@@ -1,9 +1,12 @@
 "use client";
 
 import { useQueryResults, useSelectedQuery } from "./hooks";
-import Sidebar from "@/components/sidebar";
-import { MainContent } from "./components";
-import { useCallback } from "react";
+import { useCallback, Suspense, lazy } from "react";
+import LoadingSpinner from "@/components/ui/loading-spinner";
+
+// Lazy load heavy components
+const Sidebar = lazy(() => import("@/components/sidebar"));
+const MainContent = lazy(() => import("./components/MainContent"));
 
 export default function QueryRunner() {
   const { selectedQueryId, queryText, setQueryText, handleQuerySelect } =
@@ -19,19 +22,21 @@ export default function QueryRunner() {
 
   return (
     <div className="h-screen bg-background flex relative">
-      <Sidebar
-        selectedQueryId={selectedQueryId}
-        onQuerySelect={handleQuerySelect}
-      />
-      <MainContent
-        queryText={queryText}
-        setQueryText={setQueryText}
-        executeQuery={executeQuery}
-        isLoading={isLoading}
-        resultsData={resultsData}
-        error={error}
-        onClearQuery={handleClearQuery}
-      />
+      <Suspense fallback={<LoadingSpinner className="w-full" />}>
+        <Sidebar
+          selectedQueryId={selectedQueryId}
+          onQuerySelect={handleQuerySelect}
+        />
+        <MainContent
+          queryText={queryText}
+          setQueryText={setQueryText}
+          executeQuery={executeQuery}
+          isLoading={isLoading}
+          resultsData={resultsData}
+          error={error}
+          onClearQuery={handleClearQuery}
+        />
+      </Suspense>
     </div>
   );
 }
